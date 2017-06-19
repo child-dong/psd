@@ -1,17 +1,15 @@
 (function(){
-	$('.head-content ul li').eq(1).find('a').css({color:"#fff"})
+	var init_dis = $('.on').position().left;
+	$('.list-bg').css({left:init_dis})
 	$('.head-content ul li').mouseover(function(){
-		var index = $(this).index();
-		$('.head-content ul li').eq(index).siblings().find('a').css({color:"#000"})
-		$('.list-bg').stop().animate({left:(index-1)*84+"px"},300,function(){
-			$('.head-content ul li').eq(index).find('a').css({color:"#fff"});
-		})
+		var left_dis = $(this).position().left;
+		var wid = $(this).width();
+		$('.list-bg').css({width:wid}).stop().animate({left:left_dis},300)
 	})
 	$('.head-content ul').mouseleave(function(){
-		$('.list-bg').stop().animate({left:"0"},300,function(){
-			$('.head-content ul li').eq(1).find('a').css({color:"#fff"})
+		$('.list-bg').stop().animate({left:init_dis},300,function(){
+			$('.list-bg').css({width:0})
 		})
-		$('.head-content ul li').eq(1).siblings().find('a').css({color:"#000"});
 	})
 	var mySwiper = new Swiper('.swiper-container',{
 		effect : 'flip',

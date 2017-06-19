@@ -35,22 +35,27 @@ ul li {
       position: relative; }
       .head .head-content ul li {
         float: left;
-        line-height: 40px;
-        position: relative;
-        z-index: 1001; }
+        line-height: 40px; }
+        .head .head-content ul li.on {
+          background-color: #ff0000; }
+          .head .head-content ul li.on a {
+            color: #fff; }
         .head .head-content ul li a {
+          position: relative;
           padding-left: 14px;
           padding-right: 14px;
           color: #000;
-          font-size: 14px; }
+          font-size: 14px;
+          z-index: 1000; }
+          .head .head-content ul li a:hover {
+            color: #fff; }
       .head .head-content ul .list-bg {
         position: absolute;
         top: 0;
         left: 0;
-        width: 84px;
+        width: 0;
         height: 40px;
-        background-color: #ff0000;
-        z-index: 1000; }
+        background-color: #ff0000; }
 
 .swiper-container {
   margin-top: 10px; }
